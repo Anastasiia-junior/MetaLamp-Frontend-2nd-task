@@ -1,12 +1,16 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
+const PugPlugin = require('pug-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'index.js'),
+  entry: {
+    index: path.join(__dirname, 'src', 'index.js'),
+  },
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'index.[contenthash].js',
+    path: path.join(__dirname, 'dist/'),
+    publicPath: '/',
+    filename: 'index.[contenthash:8].js',
   },
   module: {
     rules: [
@@ -15,11 +19,19 @@ module.exports = {
             use: 'babel-loader',
             exclude: /node_modules/,
         },
+        {
+            test: /\.pug$/,
+            loader: PugPlugin.loader,
+        },
+        {
+            test: /\.(css|sass|scss)$/,
+            use: ['css-loader', 'sass-loader']
+        },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'template.html'),
+      template: path.join(__dirname, 'src', 'template.pug'),
       filename: 'index.html',
     }),
     new FileManagerPlugin({
@@ -29,6 +41,12 @@ module.exports = {
            },
         },
     }),
+    new PugPlugin({
+        pretty: true,
+        extractCss: {
+            filename: 'styles.[contenthash:8].css'
+        },
+    })
   ],
   devServer: {
     watchFiles: path.join(__dirname, 'src'),
