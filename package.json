@@ -1,0 +1,20 @@
+{
+  "name": "meta2nd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anastasiia-junior/MetaLamp-Frontend-2nd-task.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anastasiia-junior/MetaLamp-Frontend-2nd-task/issues"
+  },
+  "homepage": "https://github.com/Anastasiia-junior/MetaLamp-Frontend-2nd-task#readme"
+}
