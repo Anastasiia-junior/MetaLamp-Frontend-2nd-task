@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Anastasiia-junior/MetaLamp-Frontend-2nd-task/issues"
   },
-  "homepage": "https://github.com/Anastasiia-junior/MetaLamp-Frontend-2nd-task#readme"
+  "homepage": "https://github.com/Anastasiia-junior/MetaLamp-Frontend-2nd-task#readme",
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
 }
