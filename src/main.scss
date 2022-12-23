@@ -4,6 +4,7 @@ $font-color: lch(28 99 35);
 html {
   font-size: $font-size;
   color: $font-color;
+  
 }
 
 .logo1 {
@@ -12,3 +13,15 @@ html {
   .logo2 {
     width: 10em;
   }
+
+  .normal {
+    font-family: 'Alegreya';
+    font-style: normal;
+  }
+
+  .italic {
+    font-family: 'Alegreya';
+    font-style: italic;
+  }
+
+  
