@@ -4,6 +4,7 @@ const FileManagerPlugin = require('filemanager-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
+
 module.exports = {
   entry: path.join(__dirname, 'src', 'index.js'),
   output: {
@@ -57,13 +58,21 @@ module.exports = {
     new FileManagerPlugin({
         events: {
             onStart: {
-              delete: ['dist'],
-           },
+                delete: ['dist'],
+            },
+            onEnd: {
+                copy: [
+                    {
+                        source: path.join('src', 'static'),
+                        destination: 'dist',
+                    }
+                ],
+            },
         },
     }),
     new MiniCssExtractPlugin({
         filename: '[name].[contenthash].css',
-    })
+    }),
   ],
   devServer: {
     watchFiles: path.join(__dirname, 'src'),
