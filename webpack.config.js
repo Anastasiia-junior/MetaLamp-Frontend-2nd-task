@@ -74,6 +74,7 @@ module.exports = {
         filename: '[name].[contenthash].css',
     }),
   ],
+  devtool: 'source-map',
   devServer: {
     watchFiles: path.join(__dirname, 'src'),
     port: 9000,
