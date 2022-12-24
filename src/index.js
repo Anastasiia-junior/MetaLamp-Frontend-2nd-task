@@ -1,5 +1,6 @@
-import './main.scss';
 import './fonts/fonts.scss';
+import './main.scss';
+
 
 function component(text) {
     const element = document.createElement('h1');

@@ -44,7 +44,7 @@ module.exports = {
             test: /\.(woff(2)?|eot|ttf|otf)$/i,
             type: 'asset/resource',
             generator: {
-                filename: path.join('fonts', '[name].[contenthash][ext]')
+                filename:'fonts/[name].[contenthash][ext]'
             },
         }
     ],
